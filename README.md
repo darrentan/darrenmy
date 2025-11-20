@@ -24,6 +24,3 @@ This repo is connected to **Cloudflare Pages**.
 MIT (feel free to adapt!)
 
 ---
-
-*Powered by Cloudflare Pages. View source, fork, or contribute on [GitHub](https://github.com/YOUR_GITHUB_USERNAME/itsme-darren-my).*
-
