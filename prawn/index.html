@@ -346,4 +346,48 @@
       </div>
 
       <audio id="audio" src="media/i_will_follow_my_tiger_prawn.mp3" preload="auto" playsinline></audio>
-    </div
+      </div>
+
+  <script>
+    const audio = document.getElementById('audio');
+    const playBtn = document.getElementById('playBtn');
+    const card = document.getElementById('tigerPrawnCard');
+
+    // Try autoplay, with user-interaction fallback (browsers may block autoplay with sound) [web:21][web:22][web:24]
+    window.addEventListener('load', async () => {
+      try {
+        await audio.play();
+      } catch (e) {
+        const resume = async () => {
+          try {
+            await audio.play();
+          } catch (err) {
+            // still blocked, user can press play
+          }
+          window.removeEventListener('click', resume);
+          window.removeEventListener('touchstart', resume);
+        };
+        window.addEventListener('click', resume, { once: true });
+        window.addEventListener('touchstart', resume, { once: true });
+      }
+    });
+
+    playBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      if (audio.paused) {
+        await audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+
+    card.addEventListener('click', async () => {
+      if (audio.paused) {
+        await audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+  </script>
+</body>
+</html>
