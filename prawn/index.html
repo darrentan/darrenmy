@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Will Follow My Tiger Prawn</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #FF4500 0%, #FF6347 50%, #FFA07A 100%);
+      color: #2C1810;
+      text-align: center;
+      padding: 2rem;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 8px 32px rgba(255, 69, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 500px;
+      margin: 0 auto;
+      z-index: 1;
+      position: relative;
+    }
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-weight: 800;
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #FF4500, #FF1493);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    p {
+      font-style: italic;
+      margin: 0 0 2.5rem 0;
+      font-size: 1.2rem;
+      color: #4A2C1F;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    }
+    audio {
+      outline: none;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+      width: 100%;
+      max-width: 400px;
+      background: linear-gradient(145deg, #FFF8F0, #FFE4C4);
+      border: 2px solid rgba(255, 69, 0, 0.3);
+    }
+    /* Prawn swimming animation */
+    .prawn-anim {
+      position: fixed;
+      left: -180px;
+      bottom: 13vh;
+      width: 160px;
+      height: 80px;
+      z-index: 0;
+      animation: swim 12s linear infinite;
+      filter: drop-shadow(0 6px 18px #FF8C69);
+    }
+    @keyframes swim {
+      0% {
+        left: -180px;
+        transform: scaleX(1) translateY(0px) rotate(-4deg);
+      }
+      15% {
+        transform: scaleX(1) translateY(-8px) rotate(-10deg);
+      }
+      25% {
+        transform: scaleX(1) translateY(2px) rotate(2deg);
+      }
+      40% {
+        transform: scaleX(1) translateY(-4px) rotate(-6deg);
+      }
+      50% {
+        left: 50vw;
+        transform: scaleX(1) translateY(0px) rotate(-8deg);
+      }
+      70% {
+        left: 95vw;
+        transform: scaleX(-1) translateY(4px) rotate(3deg);
+      }
+      80% {
+        transform: scaleX(-1) translateY(-8px) rotate(-2deg);
+      }
+      100% {
+        left: -180px;
+        transform: scaleX(1) translateY(0px) rotate(-4deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- SVG Tiger Prawn Animation -->
+  <svg class="prawn-anim" viewBox="0 0 160 80">
+    <!-- Body -->
+    <ellipse cx="92" cy="40" rx="62" ry="21" fill="#FF8C69" stroke="#FF6347" stroke-width="3"/>
+    <ellipse cx="60" cy="36" rx="18" ry="9" fill="#FFA07A" opacity="0.9"/>
+    <!-- Stripes -->
+    <rect x="90" y="23" width="6" height="34" fill="#FF4500" rx="3" />
+    <rect x="108" y="28" width="4" height="26" fill="#FF6347" rx="2" />
+    <rect x="127" y="33" width="3" height="16" fill="#FF4500" rx="1.5" />
+    <rect x="116" y="25" width="2.4" height="20" fill="#FF6347" rx="1" />
+    <rect x="70" y="30" width="4" height="14" fill="#FF4500" rx="2" />
+    <!-- Head -->
+    <ellipse cx="34" cy="36" rx="15" ry="13" fill="#FF6347" stroke="#D35400" stroke-width="2"/>
+    <!-- Eye -->
+    <ellipse cx="25" cy="32" rx="3.5" ry="3.5" fill="#2C1810"/>
+    <!-- Antennae -->
+    <path d="M17,28 Q5,18 20,15" stroke="#FDEBCF" stroke-width="2" fill="none" />
+    <path d="M17,28 Q23,10 32,18" stroke="#FFE4C4" stroke-width="1.5" fill="none" />
+    <!-- Tail -->
+    <ellipse cx="154" cy="44" rx="8" ry="6" fill="#FF6347" stroke="#FF4500" stroke-width="1.2"/>
+  </svg>
+  <div class="container">
+    <h1>Tiger Prawn Theme</h1>
+    <p>Listen to "I Will Follow My Tiger Prawn"</p>
+    <audio controls>
+      <source src="media/i_will_follow_my_tiger_prawn.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</body>
+</html>
