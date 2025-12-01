@@ -353,7 +353,7 @@
     const playBtn = document.getElementById('playBtn');
     const card = document.getElementById('tigerPrawnCard');
 
-    // Try autoplay, with user-interaction fallback (browsers may block autoplay with sound) [web:21][web:22][web:24]
+    
     window.addEventListener('load', async () => {
       try {
         await audio.play();
@@ -362,7 +362,7 @@
           try {
             await audio.play();
           } catch (err) {
-            // still blocked, user can press play
+            
           }
           window.removeEventListener('click', resume);
           window.removeEventListener('touchstart', resume);
